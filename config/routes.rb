@@ -3,10 +3,6 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
-  get 'statc_pages/home'
-
-  get 'statc_pages/help'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root 'application#hello'
