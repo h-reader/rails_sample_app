@@ -79,4 +79,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "user token create" do
+    assert @user.remember
+    assert_not @user.remember_digest.nil?
+    assert_not @user.remember_token.nil?
+  end
+
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?('')
+  end
+
 end
