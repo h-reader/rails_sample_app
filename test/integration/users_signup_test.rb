@@ -29,12 +29,11 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     assert_template 'users/new'
     assert_select 'div#error_explanation'
-    assert_select 'div.alert-danger', /The form contains 6 error./
+    assert_select 'div.alert-danger', /The form contains 4 error./
     assert_select 'li', 'Name is too long (maximum is 50 characters)'
     assert_select 'li', 'Email can\'t be blank'
     assert_select 'li', 'Password can\'t be blank'
     assert_select 'li', 'Email is invalid'
-    assert_select 'li', 'Password is too short (minimum is 6 characters)'
 
   end
 
